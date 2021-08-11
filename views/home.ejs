@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <link rel="stylesheet" media="screen and (max-width:1462px)" type="text/css" href="/css/mq1462px.css">
+    <link rel="stylesheet" media="screen and (max-width:1024px)" type="text/css" href="/css/mq1024px.css">
+    <link rel="stylesheet" media="screen and (max-width:768px)" type="text/css" href="/css/mq768px.css">
+    <link rel="stylesheet" media="screen and (max-width:480px)" type="text/css" href="/css/mq480px.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+<body>
+
+    <div id="heading">
+        <h1>Stuff I need to do</h1>
+    </div>
+    
+    <div id="main-container">
+        <div id="my-lists">
+
+            <div class="list-heading">
+                <h1>My lists</h1>
+            </div>
+            
+            
+            <div class="ul-list">
+                <ul id="nav-list">
+                    <% for (let i of name){ %>
+                        <li class="item"><a href="/?id=<%= i._id %>"><%= i.list_name %></a></li>
+                    <% } %>
+                </ul>
+            </div>
+            
+            <div class="form-section-1">
+                <form action="/create-list" method="POST"> 
+                    <button class="list-btn" type="submit"><i class="fas fa-plus"></i></button>
+                    &nbsp;
+                    <input type="text" name="list_name" placeholder="add list name" required>
+                </form>
+            </div>
+            
+
+        </div>
+
+        <% if(task_list!=undefined) { %>
+            <div id="task-box">
+
+                <div class="task-heading">
+                    <h1><%= list_title.list_name %></h1>
+                    <p><%= task_list.task_name.length %> tasks remaining</p>
+                </div>
+                
+                <div class="ul-task">
+                    <form action="/delete-task" method="POST">
+                        <ul>
+                            <% for (let [i,value] of task_list.task_name.entries()){ %>
+                                <li class="task">
+                                    <input type="checkbox" name="check" value="<%= value %>" id="<%= i %>">&nbsp;   
+                                    <label for="<%= i %>"><span class="custom-checkbox"></span>
+                                        <span class="text-anim"><%= value %></span>
+                                        <div class="fader fader-left"></div>
+                                        <div class="fader fader-right"></div>
+                                    </label>
+                                </li>
+                            <% } %>    
+                        </ul>
+                        <button type="submit" class="delete-task">Clear completed tasks</button>
+                    </form>
+                    
+                </div>
+    
+                <div class="form-section-2">
+                    <form action="/create-task" method="POST">
+                        <button class="task-btn" type="submit"><i class="fas fa-plus"></i></button>
+                        &nbsp;
+                        <input type="text" name="list_item" placeholder="enter new task" required>
+                    </form>
+                </div>
+    
+                <div class="delete-btns">
+                    <a href="/delete-list">Delete list</a>
+                </div>
+    
+            </div>
+        <% } %>
+
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>

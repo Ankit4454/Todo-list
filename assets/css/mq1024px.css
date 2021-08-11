@@ -1,0 +1,26 @@
+#heading{
+    font-size: 2.2rem;
+    word-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
+    margin-top: -1.6rem;
+}
+
+.list-heading h1{
+    font-size: 1.8rem;
+}
+
+.task-heading h1{
+    font-size: 1.8rem;
+}
+
+#task-box{
+    width: 22em;
+}
+
+.delete-task{
+    transform: translate(0px, 70px);
+}
+
+.delete-btns a{
+    transform: translate(250px, 10px);
+}

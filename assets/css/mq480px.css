@@ -1,0 +1,39 @@
+#heading{
+    font-size: 1rem;
+    word-spacing: 0.1rem;
+    margin-top: -0.6rem;
+}
+
+.list-heading h1{
+    font-size: 1rem;
+}
+
+.ul-list ul li a{
+    font-size: 0.8rem;
+}
+
+.task-heading h1{
+    font-size: 1rem;
+}
+
+.task-heading p{
+    font-size: 0.8rem;
+}
+
+#task-box{
+    width: 18em;
+}
+
+.ul-task ul li{
+    font-size: 0.8rem;
+}
+
+.delete-task{
+    font-size: 0.8rem;
+    transform: translate(-5px, 70px);
+}
+
+.delete-btns a{
+    font-size: 0.8rem;
+    transform: translate(205px, 10px);
+}
