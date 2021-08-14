@@ -5,7 +5,7 @@ Creative todo-list which is carved in Node js, Express js and MongoDB.
 
 
 ## Demo
+![ToDo demo](https://user-images.githubusercontent.com/53224332/129439058-ed2ae68c-e97e-4344-9c57-64def959a170.gif)
 
-<img src="https://www34.img2go.com/dl/web7/download-file/bd41a849-086c-4890-ba57-56001a534d8a/ToDo%20demo.gif" />
 
   
